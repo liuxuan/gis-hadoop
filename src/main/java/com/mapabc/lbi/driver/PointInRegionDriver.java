@@ -16,6 +16,11 @@ import org.apache.hadoop.util.ToolRunner;
 import com.mapabc.lbi.mapper.PointInRegionMapper;
 import com.mapabc.lbi.reducer.PointInRegionReducer;
 
+/**
+ * 点在面中判断Job启动类
+ * @author liu.xuan
+ *
+ */
 public class PointInRegionDriver extends Configured implements Tool {
 
 	@Override

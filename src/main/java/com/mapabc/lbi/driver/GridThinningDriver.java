@@ -15,6 +15,11 @@ import com.mapabc.lbi.mapper.GridThinningMapper;
 import com.mapabc.lbi.reducer.GridThinningReducer;
 import com.mapabc.lbi.writable.LngLatWritable;
 
+/**
+ * 网格抽稀启动Job类
+ * @author liu.xuan
+ *
+ */
 public class GridThinningDriver extends Configured implements Tool {
 	
 	public static void main(String[] args) throws Exception {
