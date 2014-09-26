@@ -2,6 +2,7 @@ package com.mapabc.lbi.driver;
 
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -33,8 +34,10 @@ public class GridThinningDriver extends Configured implements Tool {
 		job.setJarByClass(GridThinningDriver.class);
 		job.setJobName("GridThinning");
 		
+		job.setMapOutputKeyClass(Text.class);
+		job.setMapOutputValueClass(LngLatWritable.class);
 		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(LngLatWritable.class);
+		job.setOutputValueClass(DoubleWritable.class);
 		
 		job.setMapperClass(GridThinningMapper.class);
 		job.setReducerClass(GridThinningReducer.class);
